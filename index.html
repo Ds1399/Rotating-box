@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Mesmerizing Pattern </title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #333;
+        overflow: hidden;
+        font-family: sans-serif;
+      }
+      
+      .box {
+        width: 50px;
+        height: 50px;
+        background: #f0e;
+        margin: 5px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+        animation: rotate 1s linear infinite;
+      }
+      
+      @keyframes rotate {
+        50% {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const colors = ['#f00', '#0f0', '#00f'];
+      for (let i = 0; i < 100; i++) {
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.style.background = colors[Math.floor(Math.random() * colors.length)];
+        box.style.animationDuration = `${Math.random() * 2s + 1}s`;
+        document.body.appendChild(box);
+      }
+    </script>
+  </body>
+</html>
